@@ -1,3 +1,3 @@
 export class ClienteDT {
-  public salario: number;
+  public salario: number = 0;
 }

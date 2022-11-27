@@ -1,4 +1,5 @@
 import { IManager } from "../spec/prov/IManager";
+import { FacadeLimiteOps } from "./FacadeLimiteOps";
 
 export class Manager implements IManager {
   private providedInterfaces: Map<string, Object>;
@@ -7,6 +8,8 @@ export class Manager implements IManager {
   constructor() {
     this.providedInterfaces = new Map<string, Object>();
     this.requiredInterfaces = new Map<string, Object>();
+
+    this.providedInterfaces.set("ILimiteOps", new FacadeLimiteOps());
   }
 
   public getProvidedInterfaces() {
